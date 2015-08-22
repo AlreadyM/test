@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Tiny Scrollbar: A crossbrowser lightweight javascript/jQuery scrollbar.</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="A crossbrowser lightweight javascript/jQuery scrollbar." />
+
+        <link rel="stylesheet" href="tinyscrollbar.css" type="text/css" media="screen"/>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="jquery.tinyscrollbar.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#scrollbar1').tinyscrollbar();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="scrollbar1">
+            <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+            <div class="viewport">
+                 <div class="overview">
+                    <h3>Magnis dis parturient montes</h3></div>
+            </div>
+        </div>
+    </body>
+</html>

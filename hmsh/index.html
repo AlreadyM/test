@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+*{box-sizing: border-box; padding: 0; margin: 0;}
+	html,body{ height: 100%;transition:all 1s; font-size: 13px; font-family: "微软雅黑";}
+	.nav{ width: 1000px; position: fixed; top: 0; left: 50%; margin-left: -500px;}
+	.nav .item{ line-height: 55px; float: left; color: #828282; font-size: 22px; list-style: none; margin: 0 20px; cursor: pointer;}
+	.nav ul{ float: left;}
+	.nav .logo{ float: left; margin-right: 50px;}
+	.nav .login{ float: right; width: 200px; box-sizing: border-box; height: 55px;}
+	.nav .login a{   display: inline-block; float: left;
+  margin: 15px 5px;
+  line-height: 25px;
+  font-size: 15px;
+  padding: 0 20px; color: #828282; border: 2px solid #828282; border-radius: 11px; vertical-align: middle;}
+	
+	.wrap{ width: 100%; margin: 0 auto; max-width: 1920px; height: 100%; padding-bottom: 20px;}
+	.foot{background: #333; padding: 40px;  width: 100%;}
+	.foot .padding{ max-width: 1000px; line-height: 2; color: #fff; text-align: center; margin: 0 auto;}
+	
+	.block-home{height: 100vh;width: 100%; background: url(img/bg1.jpg); background-size: cover;transition:all 1s;}
+	.block-3,.block-4,.block-5{height: 100vh; width: 100%; background: url(img/bg3.jpg); background-size: cover; transition:all 1s;}
+	.block-3 .flex-item img{ opacity:1; transition:  all 4s;}
+	
+	.block-4{ background: #fff;}
+	.block-5{ background: #e58b13;}
+	.block-home .flex, .block-3 .flex,.block-4 .flex,.block-5 .flex{ max-width: 1000px; margin: 0 auto; text-align: left; height: 100%; text-align: center; display: flex; align-content:center; justify-content:center; align-items:center}
+	.block-home .flex-item{ color: #5e5e5e; width: 100%;}
+	.block-home .flex-item h2{text-align: left; line-height: 3;}
+	.block-home .flex-item p{ line-height: 1.5; font-size: 13px; text-align: left;}
+	
+	.block-4 .flex-item p{ line-height: 1.5; font-size: 13px; text-align: left;}
+	.block-4 .flex-item h2{ text-align: left; line-height: 3;}
+	.block-4 .flex-item img{ opacity: 1; transition: all 4s;}
+	.block-5 .flex .flex-item{ height: 400px; color: #fff; font-size: 13px;text-align: left;}
+	.block-5 .flex .flex-item a{ width: 100px; border:1px solid #fff; border-radius: 15px; padding: 5px 10px; margin: 0 10px 0 0; text-decoration: none; height: 30px; background: #e58b13; color: #fff;}
+	
+	.imgshow .flex-item img{ transition: all 4s; opacity:1;!important;}
+</style>
+<script type="text/javascript" src="img/jquery-1.11.3.js"></script>
+</head>
+<body>
+<div class="wrap">
+	<div class="nav">
+		<div class="logo"><img src="img/logo.png" alt="" /></div>
+		<ul>
+			<li class="item"><a data-href="top" class="jsjump">首页</a></li>
+			<li class="item"><a data-href="xz" class="jsjump">下载</a></li>
+			<li class="item"><a data-href="js" class="jsjump">公司介绍</a></li>
+			<li class="item"><a data-href="rz" class="jsjump">商家入驻</a></li>
+		</ul>
+		<div class="login">
+			<a>登录</a>
+			<a>注册</a>
+		</div>
+	</div>
+	<div class="block-home">
+		<div id="top"></div>
+		<div class="flex">
+			<div class="flex-item">
+				<h2 style="font-size: 22px">和沐生活，触手可及</h2>
+				<p>全力为您提供最优质的生活服务信息！<br>让您的生活更智慧</p>
+			</div>
+		</div>
+	</div>
+	<div class="block-3">
+		<div id="xz"></div>
+		<div class="flex">
+			<div class="flex-item" style="height: 90%;">
+				<img src="img/p3.png" style="max-height: 100%;">
+			</div>
+		</div>
+	</div>
+	<div class="block-4">
+		<div id="js"></div>
+		<div class="flex">
+			<div class="flex-item">
+			<div style=" width: 60%; float: left;">
+				<h2>公司简介</h2>
+				<p>
+				和沐生活是潜山和沐商业有限公司旗下全资开发的APP平台，也是安徽省目前规划最完整、细分最完备的集影视、旅游、购物、交友、社区服务、游戏综合一体的手机终端。
+和沐生活主要打造县域级智慧城市，运用线下加盟店的团购资源，厂商的零距离对接，镇村最后一公里的人力成本低，将我们的商品正宗、物流快、社区服务快捷等特点，形成新的商业体系。运用线上购物、旅游、影视、交友、游戏等加快我们APP下载，加快农产品进城工业品下乡的进度。带动本土旅游业、农特产品的发展，百姓的精神生活提高，有着重大意义。正在建设中的和沐电商产业园，依托和沐广场资源优势，聚集网店线下体验中心与客服中心、仓储中心、物流集散地于一体，即将闪耀面世。近期规划中的和沐电商产业园二期项目，将会聚拢区域最优秀人才资源，打造集仓储、物流、研发、电商创业孵化器、天使投资于一体的综合性电商园区，推动区域化互联网+业务发展。
+				</p>
+			</div>
+			<div style="width: 40%; float: left; padding-top: 45px;"><img src="img/pic4.gif" width="300"></div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="block-5">
+		<div id="rz"></div>
+		<div class="flex">
+			<div class="flex-item"><img src="img/pic5.gif" style="max-height: 100%;"></div>
+			<div class="flex-item" style="padding-top: 150px;">
+				<h2 style=" font-size: 22px;">商家入驻</h2>
+				<p style="font-size: 14px; margin: 30px 0;">现在入驻，立享十三大特权，惊喜多多，财源滚滚</p>
+				<p>
+					<a href="https://shop.yshjie.com/statichtml/bjmovie01/site/public/?page=login" target="_blank">商家登录</a>
+					<a href="https://shop.yshjie.com/statichtml/bjmovie01/site/public/?page=login" target="_blank">商家入驻</a>
+				</p>
+				<p style="margin-top: 20px;">温馨提示：新用户请先注册账号入驻</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="foot">
+		<div class="padding">
+		<p>联系电话：400-960-1230<br>
+公司地址：安徽安庆潜山县潜阳路88号<br>
+京ICP备14036806号   Copyright © 2015 潜山和沐商业管理有限公司 All Rights Reserved</p>
+		</div>
+	</div>
+</div>	
+<script type="text/javascript">
+var beforeScrollTop = getScrollTop();
+var isdoing = false;
+$(".jsjump").on("click",function(){
+	var top = $("#"+$(this).data("href")).offset().top;
+//	$('body').animate({scrollTop:top}, 'slow');
+	if(!isdoing){
+		$('html,body').animate({scrollTop:top}, 'slow','',function(){
+			isdoing = false;
+		});
+	}
+	isdoing = true;
+	
+})
+function getTop(e)
+{
+    var offset=e.offsetTop;
+    if(e.offsetParent!=null) //只要还有父元素,也就是当前元素不是根节点就继续往上累计元素的高度
+        offset+=getTop(e.offsetParent);
+    return offset;
+}
+function windowHeight() {
+    var de = document.documentElement;
+    return self.innerHeight||(de && de.clientHeight)||document.body.clientHeight;
+}
+function scrolltop(objTop){
+	if(!isdoing){
+			$('html,body').animate({scrollTop:objTop}, 'slow','',function(){
+				isdoing = false;
+			});
+		}
+		isdoing = true;
+}
+function blockjump(classname,e){
+	var wh = windowHeight();//窗口高度
+	var objTop = document.getElementsByClassName(classname)[0].offsetTop; //目标的顶
+  var scrollTop = getScrollTop();
+//	console.log("objtop:"+objTop,"scroll:"+document.body.scrollTop);
+	//向下滚动
+	if(scrollTop - (objTop-wh) <wh &&  scrollTop - (objTop-wh) > 100 && e=='down' ){
+		scrolltop(objTop);
+	}
+	//向上滚动
+	if( (scrollTop - objTop) < (wh-200) &&   (scrollTop - objTop)>0  && e=='up'){
+		scrolltop(objTop);
+	}
+	//监听各个动画
+	if( Math.abs(objTop - $(".block-3").offset().top)<100 ){
+		if(!$(".block-3").hasClass("imgshow")){
+			$(".block-3").addClass("imgshow");
+		}
+	}
+	if( Math.abs(objTop - $(".block-4").offset().top)<100 ){
+		if(!$(".block-4").hasClass("imgshow")){
+			$(".block-4").addClass("imgshow");
+		}
+	}
+	
+}
+function getScrollTop(){
+  var scrollTop=0;
+  if(document.documentElement&&document.documentElement.scrollTop){
+    scrollTop=document.documentElement.scrollTop;
+  }else if(document.body){
+    scrollTop=document.body.scrollTop;
+  }
+  return scrollTop;
+}
+if(!!window.attachEvent)//ie浏览器下。
+{
+    window.attachEvent('onscroll',function(){
+		var afterScrollTop = getScrollTop(),
+            delta = "";
+        if( afterScrollTop - beforeScrollTop === 0 ) return false;
+        delta = (afterScrollTop - beforeScrollTop) > 0 ? "down" : "up"
+        beforeScrollTop = afterScrollTop;
+    	blockjump("block-home",delta);
+    	blockjump("block-3",delta);
+    	blockjump("block-4",delta);
+    	blockjump("block-5",delta);
+    });
+}
+if(!!window.addEventListener)//非ie浏览器下
+{
+    window.addEventListener("scroll",function(e){
+    	var afterScrollTop = getScrollTop(),
+            delta = "";
+        if( afterScrollTop - beforeScrollTop === 0 ) return false;
+        delta = (afterScrollTop - beforeScrollTop) > 0 ? "down" : "up"
+        beforeScrollTop = afterScrollTop;
+    	blockjump("block-home",delta);
+    	blockjump("block-3",delta);
+    	blockjump("block-4",delta);
+    	blockjump("block-5",delta);
+    });
+}	
+</script>
+</body>
+</html>

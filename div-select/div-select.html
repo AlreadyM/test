@@ -1,0 +1,123 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title></title>
+    <style>
+        .div_1{
+            height:100;
+            overflow-x:hidden;
+            overflow-y:scroll;
+            cellspacing:0px;
+            cellpadding:0px;
+        }
+        .table_1{
+            top:0px;
+            width:100%;
+            heigth:20;
+            border:1;
+            font-size:14px;
+            cellspacing:0px;
+            cellpadding:0px;
+        }
+        .tr_1{
+            heigth:20;
+            width:300px;
+            cursor:default;
+        }
+    </style>
+
+    <script>
+        function moveon(obj,objtext,objin){
+            obj.background = "i.jpg";
+            obj.style.color = "#FFFFFF";
+            obj.style.border= 1;
+            document.getElementById(objin).onblur ="";
+        }
+        function out(obj,objtext,objin){
+            obj.background = "";
+            obj.style.color = "";
+            document.getElementById(objin).focus();
+            document.getElementById(objin).onblur =function anonymous(){leave(objtext);};
+        }
+        function divmoveon(objtext,objin){
+            document.getElementById(objin).onblur ="";
+        }
+
+        function divout(objtext,objin){
+            document.getElementById(objin).focus();
+            document.getElementById(objin).onblur =function anonymous(){leave(objtext);};
+        }
+        function selected(textobj,obj,divobj){
+            document.getElementById(textobj).value=obj.firstChild.nodeValue;
+            document.getElementById(divobj).style.display="none";
+        }
+        function showdiv_here(listid,obj,num,width){
+            if(num>15){
+                document.getElementById(listid).style.height = 22*15;
+            }else{
+                document.getElementById(listid).style.overflowY="hidden";
+                document.getElementById(listid).style.height = num*22;
+            }
+            if(width<30){
+                document.getElementById(listid).style.width=200;
+            }
+            document.getElementById(obj).style.display="";
+        }
+        function leave(divobj){
+            document.getElementById(divobj).style.display="none";
+        }
+    </script>
+
+</head>
+<body >
+<table border=1>
+    <tr><td>hello</td>
+        <td><input type="text" id="name1" readonly="true" value="" onclick="showdiv_here('listdiv','showlist1',18,12);"  enable="false"  ></input>
+            <div id="A" style="position:relative">
+                <div id="showlist1" style="display:none;position:absolute;left:0px;top:0px">
+                    <table  border=0 cellspacing=0 cellpadding=1>
+                        <tr><td bgcolor="#000000">
+                            <table  bgcolor="#FFFFFF" border=0 cellspacing=0 cellpadding=0>
+                                <tr><td>
+                                    <div id="listdiv" class="div_1" onMouseDown ="divmoveon('showlist1','name1')"  onmouseover="divmoveon('showlist1','name1')" onmouseout="divout('showlist1','name1')">
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">1</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">2</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">3</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">4</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">5</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">6</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">1</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">2</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">3</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">4</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">5</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">6</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">1</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">2</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">4</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">5</td></tr></table>
+                                        <table class="table_1"><tr class="tr_1"><td onmouseover="moveon(this,'showlist1','name1')" onmouseout="out(this,'showlist1','name1')"
+                                                                                    onclick ="selected('name1',this,'showlist1')">6</td></tr></table>
+                                    </div>
+                                </td></tr></table>
+                        </td></tr></table>
+                </div ></div>
+        </td></tr></table>
+</body>
+</html>

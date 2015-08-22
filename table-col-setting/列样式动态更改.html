@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style type="text/css">
+        table{border-collapse:collapse;border:1px solid #666}
+        td{border-collapse:collapse;border-bottom:1px solid #666}
+        thead td{background:#ddd; cursor:pointer}
+        .sel{font-weight:22px; background:green; color:red;}
+    </style>
+    <script type="text/javascript">
+        function selT(event){
+            var cols = document.getElementsByTagName('col');
+            var len = cols.length;
+            var event = event || window.event;
+            var srcEle = event.srcElement||event.target;
+            if(srcEle.tagName.toLowerCase() == 'td'){
+                var index = srcEle.cellIndex;
+                for(var i = 0; i < len; i++){
+                    index == i?cols[i].className = 'sel' : cols[i].className = '';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table width="300">
+    <col align="left" />
+    <col align="left" />
+    <col align="right" />
+    <thead onclick="selT(event);">
+    <tr><td>ISBN</td><td>Title</td><td>Price</td></tr>
+    </thead>
+    <tr><td>3476896</td><td>My first HTML</td><td>$53</td></tr>
+    <tr><td>2489604</td><td>My first CSS</td><td>$47</td></tr>
+    <tr><td>3476896</td><td>My first HTML</td><td>$53</td></tr>
+    <tr><td>2489604</td><td>My first CSS</td><td>$47</td></tr>
+</table>
+</body>
+</html>

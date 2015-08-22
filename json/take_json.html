@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>json</title>
+    <script src="../../Frame/jQuery/jquery-2.1.3.min.js"></script>
+</head>
+<body>
+
+<button type="button">点击开始测试</button>
+<script>
+
+//    var jsonobj=/json.json;
+//    {
+//        "array": [
+//            1,
+//            2,
+//            3
+//        ],
+//        "boolean": true,
+//        "null": null,
+//        "number": 123,
+//        "object": {
+//            "a": "b",
+//            "c": "d",
+//            "e": "f",
+//            "array": [
+//                1,
+//                2,
+//                3]
+//        },
+//        "string": "Hello World"
+//    };
+//    var txt;
+//    document.getElementById("div").innerHTML=jsonobj.object.array[1];
+    $(document).ready(function(){
+        $.getJSON('json.json',function(json){
+            alert(json);
+            var da=json.boolean;
+//            $(this.string).toString(da);
+            alert(da);
+        })
+
+    })
+
+</script>
+</body>
+</html>

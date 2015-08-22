@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; chaRset=utf-8" />
+<meta name="author" content=" LiYuxi" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<title>带触摸移动端焦点图轮播代码特效</title>
+<link rel="stylesheet" href="css/styles.css" type="text/css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body class="keBody">
+<h1 class="keTitle">带触摸移动端焦点图轮播代码特效</h1>
+<div class="kePublic">
+<!--效果html开始-->
+	<div class="slider">
+	  <ul>
+	    <li><a href="http://www.internetke.com" target="_blank"><img src="images/1.jpg" alt="科e互联网站建设团队"></a></li>
+		<li><a href="http://www.internetke.com" target="_blank"><img src="images/2.jpg" alt="网页特效集锦"></a></li>
+		<li><a href="http://www.internetke.com" target="_blank"><img src="images/3.jpg" alt="JS代码素材库"></a></li>
+		<li><a href="http://www.internetke.com" target="_blank"><img src="images/4.jpg" alt="用心建站用心服务"></a></li>
+		<li><a href="http://www.internetke.com" target="_blank"><img src="images/5.jpg" alt="学会用才能学会写"></a></li>
+	  </ul>
+	</div>
+  <script type="text/javascript" src="js/yxMobileSlider.js"></script>
+  <script>
+    $(".slider").yxMobileSlider({width:640,height:320,during:3000})
+  </script>
+    <script type="text/javascript">function getInfo(){
+        var s = "";
+        s += " 网页可见区域宽："+ document.body.clientWidth+"\n";
+        s += " 网页可见区域高："+ document.body.clientHeight+"\n";
+        s += " 网页可见区域宽："+ document.body.offsetWidth + " (包括边线和滚动条的宽)"+"\n";
+        s += " 网页可见区域高："+ document.body.offsetHeight + " (包括边线的宽)"+"\n";
+        s += " 网页正文全文宽："+ document.body.scrollWidth+"\n";
+        s += " 网页正文全文高："+ document.body.scrollHeight+"\n";
+        s += " 网页被卷去的高(ff)："+ document.body.scrollTop+"\n";
+        s += " 网页被卷去的高(ie)："+ document.documentElement.scrollTop+"\n";
+        s += " 网页被卷去的左："+ document.body.scrollLeft+"\n";
+        s += " 网页正文部分上："+ window.screenTop+"\n";
+        s += " 网页正文部分左："+ window.screenLeft+"\n";
+        s += " 屏幕分辨率的高："+ window.screen.height+"\n";
+        s += " 屏幕分辨率的宽："+ window.screen.width+"\n";
+        s += " 屏幕可用工作区高度："+ window.screen.availHeight+"\n";
+        s += " 屏幕可用工作区宽度："+ window.screen.availWidth+"\n";
+        s += " 你的屏幕设置是 "+ window.screen.colorDepth +" 位彩色"+"\n";
+        s += " 你的屏幕设置 "+ window.screen.deviceXDPI +" 像素/英寸"+"\n";
+        alert (s);
+    }
+    getInfo();
+    </script>
+<!--效果html结束-->
+</div>
+</body>
+</html>

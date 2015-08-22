@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>列表弹出详情</title>
+    <style>
+        .list-click{
+            background-color:#cfcfcf;
+        }
+        .click-left,.click-middle,.click-right{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+</ul>
+<div class="drop-list">
+
+    <div class="list-click">
+        <div class="click-left">1300/税金及保险费用</div>
+        <div class="click-middle">拍摄阶段</div>
+        <div class="click-right">-15,00000,000.00</div>
+        <div class="click-img"><img src="../img/btn/down.png"/><img style="display: none" src="../img/btn/up.png"/></div>
+    </div>
+    <div class="list-show">
+        show something
+    </div>
+
+
+</div>
+<script src="../Frame/jQuery/jquery-2.1.3.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".list-click").click(function () {
+            $(this).children(".click-img").children("img").toggle();
+            $(this).next(".list-show").toggle();
+        });
+    })
+</script>
+
+</body>
+</html>

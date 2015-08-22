@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>jQuery lightgallery 一款响应式触屏相册插件 - 素材家园</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet"  href="lightGallery.css"/>
+    <style>
+    	ul{
+			list-style: none outside none;
+		    padding-left: 0;
+		}
+		.gallery li {
+			display: block;
+			float: left;
+			height: 100px;
+			margin-bottom: 6px;
+			margin-right: 6px;
+			width: 100px;
+		}
+		.gallery li a {
+			height: 100px;
+			width: 100px;
+		}
+		.gallery li a img {
+			max-width: 100px;
+		}
+		.imi{
+			float:left;
+		}
+		.imi li img{
+			width:200px;
+			height:200px;
+		}
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="lightGallery.js"></script>
+    <script>
+    	 $(document).ready(function() {
+			$("#auto-loop").lightGallery({
+				loop:true,
+				auto:true,
+				pause:4000
+			})
+			$(".imi").lightGallery({
+				loop:true,
+				auto:true,
+				pause:4000
+			});
+			
+		});
+    </script>
+</head>
+<body>
+	<ul id="auto-loop" class="gallery ">
+        <li data-src="img1.jpg"> 
+            <img src="thumb1.jpg" />
+        </li>
+        <li data-src="img2.jpg" > 
+            <img src="thumb2.jpg" />
+        </li>
+        <li data-src="img3.jpg"> 
+            <img src="thumb3.jpg" />
+        </li>
+        <li data-src="img4.jpg" > 
+            <img src="thumb4.jpg" />
+        </li>
+    </ul>	
+	<ul class="imi">
+		<li data-src="http://h.hiphotos.baidu.com/image/pic/item/5fdf8db1cb13495406d25263544e9258d0094aec.jpg">><img src="http://h.hiphotos.baidu.com/image/pic/item/5fdf8db1cb13495406d25263544e9258d0094aec.jpg"/></li>
+		<li data-src="http://b.hiphotos.baidu.com/image/pic/item/2fdda3cc7cd98d100832562c233fb80e7aec90cc.jpg">><img src="http://b.hiphotos.baidu.com/image/pic/item/2fdda3cc7cd98d100832562c233fb80e7aec90cc.jpg"/></li>
+		<li data-src="img1.jpg">><img src="img1.jpg"/></li>
+		<li data-src="1.png">><img src="1.png"/></li>
+		<li data-src="img1.jpg">><img src="img1.jpg"/></li>
+		<li data-src="img1.jpg">><img src="1.png"/></li>
+	</ul>
+</body>
