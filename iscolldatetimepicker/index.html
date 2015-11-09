@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>iScroll demo: simple</title>
+<script src="../jquery/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../iscroll-master/build/iscroll-probe.js"></script>
+
+<script type="text/javascript">
+
+	var myScroll,myScroll1,result,customClass;
+
+	function loaded () {
+		function newscroll(scrollName,scroller,lineHeight,customClass){
+			scrollName = new IScroll("#"+scroller,  {
+			 mouseWheel: true,
+			 snap:"li"
+			});
+			scrollName.on('scrollEnd', function(){
+		 		var position,index=0;
+		 		// console.log(this.y);
+		 		// console.log(parseInt(lineHeight));
+		 		$("."+customClass+scroller).removeClass(customClass+scroller);
+		 		position = this.y;
+		 		index = position/parseInt(lineHeight);
+		 		var scrollElement = $("#"+scroller).find('li').eq(-index+1).addClass(customClass+scroller);
+		 		var result = $(".scrolling"+scroller).text();
+		 		console.log("本次滚动的结果是:"+result);
+			 });
+		}
+		newscroll(myScroll,"wrapper","40","scrolling");
+		newscroll(myScroll1,"wrapper1","40","scrolling");
+	}
+	function test(){
+		var date = $(".scrollingwrapper").text();
+		var time = $(".scrollingwrapper1").text();
+
+			alert(date);
+			alert(time);
+		}
+
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+</script>
+
+<style type="text/css">
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	-ms-touch-action: none;
+}
+
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-size: 12px;
+	font-family: ubuntu, helvetica, arial;
+	overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+#header {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	background: #CD235C;
+	padding: 0;
+	color: #eee;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#footer {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 48px;
+	background: #444;
+	padding: 0;
+	border-top: 1px solid #444;
+}
+
+#wrapper,#wrapper1 {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	bottom: 0px;
+	left: 0;
+	width: 50%;
+	/*background: #ccc;*/
+	overflow: hidden;
+}
+
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#scroller ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	text-align: left;
+}
+
+#scroller li {
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	/*border-bottom: 1px solid #ccc;*/
+	/*border-top: 1px solid #fff;*/
+	/*background-color: #fafafa;*/
+	font-size: 14px;
+}
+#wrapper{float: right;right: 0;left: auto;}
+.middle-s{
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	/*background-color: #cfcfcf;*/
+	border-bottom: 1px solid #cfcfcf;
+	border-top: 1px solid #cfcfcf;
+	top: 40px;
+	/*z-index: 99;*/
+}
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;} /* IE < 8 */
+.scroll{height: 120px;overflow: hidden;position: relative;}
+.test{clear: both;position: relative;}
+</style>
+</head>
+<body onload="loaded()" class="clearfix">
+<!-- <div id="header">测试1</div> -->
+<div class="scroll clearfix">
+	
+
+	<div id="wrapper">
+		<div id="scroller">
+			<ul>
+				<li></li>
+				<li>不限</li>
+				<li>2015-11-9</li>
+				<li>2015-11-10</li>
+				<li>2015-11-11</li>
+				<li>2015-11-12</li>
+				<li>2015-11-13</li>
+				<li>2015-11-14</li>
+				<li>2015-11-15</li>
+				<li>2015-11-16</li>
+				<li></li>
+				<!-- <li></li> -->
+			</ul>
+		</div>
+		<div class="middle-s"></div>
+	</div>
+	<div id="wrapper1">
+		<div id="scroller">
+			<ul>
+				<li></li>
+				<li>不限</li>
+				<li>09:00-11:00</li>
+				<li>11:00-15:00</li>
+				<li>15:00-19:00</li>
+				<li></li>
+				<!-- <li></li> -->
+			</ul>
+		</div>
+		<div class="middle-s"></div>
+	</div>
+</div>
+<div class="test clearfix">
+	<input type="button" onclick="test()" value="点我测试">
+
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

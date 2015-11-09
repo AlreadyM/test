@@ -18,7 +18,8 @@ function loaded () {
 		mouseWheel: true,
 		interactiveScrollbars: true,
 		shrinkScrollbars: 'scale',
-		fadeScrollbars: true
+		fadeScrollbars: true,
+		snap:true
 	});
 }
 
@@ -77,13 +78,14 @@ body {
 	border-top: 1px solid #444;
 }
 
-#wrapper {
+#wrapper,#wrapper1 {
 	position: absolute;
 	z-index: 1;
 	top: 45px;
 	bottom: 48px;
 	left: 0;
 	width: 100%;
+	float: left;
 	background: #ccc;
 	overflow: hidden;
 }
@@ -127,12 +129,28 @@ body {
 	background-color: #fafafa;
 	font-size: 14px;
 }
-
+/*clearfix*/
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;} /* IE < 8 */
+.scrolltest{
+	position: relative;
+	height: 300px;
+}
+/*#wrapper{float: right;right: 0;left: auto;}*/
 </style>
 </head>
 <body onload="loaded()">
-<div id="header">iScroll</div>
+<div class="scrolltest">
+	
 
+<div id="header">iScroll</div>
 <div id="wrapper">
 	<div id="scroller">
 		<ul>
@@ -189,7 +207,7 @@ body {
 		</ul>
 	</div>
 </div>
-
+</div>
 <div id="footer"></div>
 
 </body>
