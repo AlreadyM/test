@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>书本书页页脚卷起效果</title>
+	<style>
+		*{
+			box-sizing:border-box;
+		}
+		/*.book{
+			width: 200px;
+			height: 100px;
+			padding: 5px;
+			background-color: #fff;
+		}*/
+		.page{
+			position: relative;
+			width: 120px;
+			height: 60px;
+			background-color: #cfcfcf;
+			float: left;
+			margin: 5px;
+		}
+		.page:before{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		/*	width: 10px;
+			height: 10px;*/
+			content: " ";
+			/*background-color: red;*/
+			/*border-top: 10px solid green;*/
+			/*border-right:10px solid black;*/
+			border-bottom:20px solid #fff;
+			border-left: 25px solid #cfcfcf	;
+			-webkit-border-left-color:red green;
+			-webkit-border-right-color:red green;
+			-webkit-border-bottom-color:red green;
+			-webkit-border-top-color:red green;
+			z-index: 10;
+		}
+		.pagenei{
+			display: table-cell;
+			position: absolute;
+			width: 120px;
+			height: 60px;
+			background-color: #A1A1A1;
+			z-index: 9;
+			border: 3px solid #f22302;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 54px;
+		}
+	</style>
+</head>
+<body>
+	<div class="book">
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+		<div class="page">
+			<div class="pagenei">
+					<span>今天天气</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
