@@ -7,10 +7,75 @@
 	</head>
 	<body>
 		<input type="button" value="click me" />
+		<div class="result"></div>
 		<script>
 			jQuery(document).ready(function($) {
 				$("input").click(function() {
-					$.get("ajax-open.php",{a:1,b:2,c:[3,4,5,6]});
+
+				// 	var text = "123123";
+				// 	$.ajax("test.json",{
+				// 		type:"post",
+				// 		cache:"false",
+				// 		success:function(){
+				// 			console.log(data);
+				// 		},
+				// 		complete:function(){
+				// 			setTimeout(function(){
+				// 				console.log("请求完成延时1000");
+				// 			},1000)
+				// 		},
+				// 		statusCode:{
+				// 			200:function(){
+				// 				console.log("200");
+				// 			},
+				// 			400:function () {
+				// 				alert("400");
+				// 			}
+				// 		}
+				// 	});
+				// 	$.get("test.json",{
+				// 		success:function  (argument,res) {
+				// 				console.log(res);
+				// 		}
+				// 	})
+				// 	$.getScript('getScript.js',function(){
+				// 		alert(addab(1,2));
+				// 	});
+				// });
+					$.get('test.html', function(data) {
+					  $('.result').html(data);
+					  alert('Load was performed.');
+					});
+					// $('body').load('test.json');
+					// $.ajax({
+					// 	url: 'test.json',
+					// 	type: 'get',
+					// 	dataType: 'json',
+					// 	data: {param1: 'value1'},
+					// 	success:function  (argument,data,jqXHR) {
+					// 	console.log(argument);
+					// 	alert(data);
+					// 	var res = JSON.parse(jqXHR);
+					// 	$('.result').html(res);
+					// 	}
+					// })
+					// .done(function() {
+					// 	console.log("success");
+					// })
+					// .fail(function(jqXHR) {
+					// 	console.log(jqXHR);
+					// // 	var obj = $.parseJSON(jqXHR);
+					// // 	alert(obj);
+					// })
+					// .always(function() {
+					// 	console.log("complete");
+					// });
+					$.getJSON('test.json', {param1: 'value1'}, function(json, textStatus,argument) {
+							// console.log(argument);
+							// var res = JSON.parse(json);
+							// console.log(res);
+							console.log(textStatus);
+					});
 				});
 			});
 		</script>
