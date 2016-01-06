@@ -5,7 +5,7 @@
 	<META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
 	<meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="../../base.css" />
+    <!-- <link rel="stylesheet" href="../../base.css" /> -->
 	<title>试验框架加载</title>
 	<style>
 		.slider,.linkicon,.banner{border: 1px solid red;}
@@ -14,8 +14,8 @@
 </head>
 <body>
 	<header></header>
-	<div class="container">
-		<div class="slider" setscale="2.666667" setscalew="240">
+	<div class="container"  >
+		<div class="slider" id="slider" setscale="2.666667" setH="240" setW="640">
 			<img datasrc="../img/slider.jpg"  alt="slider">
 		</div>
 		<div style="width:100px;">
@@ -23,18 +23,70 @@
 				<img datasrc="../img/icon.jpg" alt="icon">
 			</div>
 		</div>
-		<div class="banner" setscaleh="640" setscalew="360">
+		<div class="banner" id="banner" setH="120" setW="640">
 			<img datasrc="../img/banner.jpg" alt="banner">
 		</div>
 	</div>
 	<footer></footer>
-	<script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
+	 <script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
 	<script>
+	// function getDeviceWidth () {
+	// 	var deviceWidth = document.body.clientWidth;
+	// 	alert(deviceWidth);
+	// }
+	// getDeviceWidth();
+	// function getParentsWidth (id) {
+	// 	var pWidth = document.getElementById(id).parentNode.offsetWidth;
+	// 	return pWidth;
+	// };
+	// function getAttr (id,attrName) {
+	// 	var attr = document.getElementById(id).getAttribute(attrName);
+	// 	return attr;
+	// };
+	// function setHeight (id,width,dataH) {
+	// 	var goal = document.getElementById(id);
+	// 	goal.style.height = width/dataH
+	// };
+	// function getScale (id,attrW,attrH) {
+	// 	var w = getAttr(id,attrW);
+	// 	var h = getAttr(id,attrH);
+	// 	var scale = w/h;
+	// 	return scale;
+	// };
+	// function setHeight (id) {
+	// 	var pW = getParentsWidth(id);
+	// 	var scale = getScale("slider","setW","setH");
+	// 	var goal = document.getElementById(id);
+	// 	goal.style.height = pW/scale+"px";
+	// };
+	// var body = document.getElementById("body");
+	// body.onResize(function() {
+		// setHeight("slider");
+		// setHeight("banner");
+		// console.log("窗口重置");
+	// });
+	// getParentsWidth("slider");
+	// window.resize(function(){
+		// setHeight("slider");
+		// getParentsWidth("slider");
+		// console.log("重置窗口");
+	// });
+	// function resize (id,attrH,attrW) {
+		// var width = getParentsWidth(id);
+		// var dataH = getAttr(id,attH);
+		// var dataW = getAttr(id,attrW);
+		// alert(width+","+dataH);
+
+	// }
+
+	// showAttr();
+
 	$(function(){
-		// function getscale (goal) {
-			
-		// 	alert(scale);
-		// };
+		function getscale (goal) {
+			alert(scale);
+		};
 		function resize () {
 			setscale("slider");
 			setscale("linkicon");
