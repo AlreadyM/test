@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- <link rel="stylesheet" href="../css/base.css" /> -->
+	<title>canvas 绘制</title>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<canvas id="map" style="border:1px solid #cfcfcf;display:block;margin:0 auto;">
+			如果浏览器不支持，此处内容会被显示
+		</canvas>
+	</div>
+	<footer></footer>
+	<script>
+	window.onload = function(){
+		var canvas = document.getElementById("map");
+			canvas.width = 800;
+			canvas.height = 600;
+		var context = canvas.getContext("2d");
+		context.beginPath();
+		context.moveTo(100,100);
+		context.lineTo(500,500);
+		context.lineTo(100,500);
+		context.lineTo(100,100);
+		context.lineWidth =5;
+		context.closePath();
+		context.strokeStyle = "red";
+		context.fillStyle = "rgb(2,100,30)";
+		context.stroke();
+		context.fill();
+
+		context.beginPath();
+		context.moveTo(200,100);
+		context.lineTo(600,500);
+		context.closePath();
+
+		context.stroke();
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <script src="../jquery/jquery-2.1.4.min.js"></script>
+	<title>弹层demo</title>
+	<style>
+	.layout{position: fixed;top: 0;left: 0; background-color: rgba(0,0,0,0.5); width:100%;height: 100%;margin: 0;z-index: 999;}
+	.laycontent{width: 80%;height: 80%;margin: 0 auto;background-color: blue;position: relative;top: 50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+	.laycontent img{max-width:100%;max-height:100%;}
+	.laycontent-content{position: relative;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
+	</style>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<ul>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+			<li>
+				<p></p>
+			</li>
+		</ul>
+	</div>
+	<footer></footer>
+	<script>
+	$(function  () {
+		var content = "	<img src='flower.jpg' alt='图片'>"+
+					"<p>12312312312312312313314124</p>";
+
+		function layApi (content) {
+			$("body").append("<div class='layout'>"+
+							"<div class='laytitle'></div>"+
+							"<div class='laycontent'><div class='laycontent-content'></div></div>"+
+							"<div class='layfooter'></div>"+
+							"</div>");
+			$(".laycontent .laycontent-content").append(content);
+
+		}
+		function removeLayout () {
+			$("body").on("click",".layout",function  () {
+							console.log("1");
+							$(".layout").remove();
+						});
+			$(document).delegate('.layout', 'click', function() {
+				$(".layout").remove();
+			});
+		}
+		removeLayout();
+		layApi(content);
+	})
+	</script>
+</body>
+</html>
