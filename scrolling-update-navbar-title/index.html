@@ -20,6 +20,7 @@
 	<script></script>
 	<script src="js/script.js"></script>
 	<style>
+		*{box-sizing:border-box;}
 		html{background-color:#EEEEEE;color:#383838;}
 		::-moz-selection{background:#333636;color:#00DFFC;}
 		::selection{background:#333636;color:#00DFFC;}
@@ -36,10 +37,10 @@
 		.showtitle{position: fixed;top: 0;right: 0;width: 70%;height: 30px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 20px;}
 		html,body,.sidebar,.content{height: 100%;width: 100%;}
 		#documenter_sidebar{width: 100%;}
-		#documenter_content{left: 30%;}
+		#documenter_content{left: 30%;padding-left: 0;width: 70%;}
 		#documenter_sidebar{height: 100%;width: 30%;}
 		.sidebar{float: left;width: 30%;}
-		.content{overflow-y: scroll; width: 70%;}
+		.content{overflow-y: scroll;padding-left: 10px;padding-right: 10px;}
 		#documenter_sidebar ol{height: 100%;}
 			#documenter_nav{margin: 0;}
 			#documenter_sidebar, #documenter_sidebar ol a{background-color: #cfcfcf;}
@@ -96,6 +97,16 @@
 					/*height: 100%;*/
 					opacity: 1;
 				}
+			}
+			.down{animation:down 2s 1 ease;}
+			.up{animation:up 2s 1 ease;}
+			@-webkit-keyframes down{
+				0%{top: 0;}
+				100%{top: 100%;}
+			}
+			@-webkit-keyframes up{
+				0%{top: 100%;}
+				100%{top: 0;}
 			}
 	</style>
 	<script>
