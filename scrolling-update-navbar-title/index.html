@@ -1,4 +1,4 @@
-<!doctype html>  
+<!doctype html>
 <!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
 <!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
 <!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
@@ -15,7 +15,7 @@
 	<!-- // <script src="js/jquery.easing.js"></script> -->
 	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
 	<!-- // <script src="js/shCore.js"></script> -->
-	<!-- // <script src="js/shBrushXml.js"></script> -->`
+	<!-- // <script src="js/shBrushXml.js"></script> -->
 	<!-- // <script src="js/shBrushJScript.js"></script> -->
 	<script></script>
 	<script src="js/script.js"></script>
@@ -34,69 +34,39 @@
 		#documenter_sidebar ol a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
 		#documenter_sidebar ol a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
 		#documenter_copyright{display:block !important;visibility:visible !important;}
-		.showtitle{position: fixed;top: 0;right: 0;width: 70%;height: 30px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 20px;}
+		.showtitle{position: fixed;top: 0;right: 0;width: 75%;height: 35px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 20px;}
 		html,body,.sidebar,.content{height: 100%;width: 100%;}
 		#documenter_sidebar{width: 100%;}
-		#documenter_content{left: 30%;padding-left: 0;width: 70%;}
-		#documenter_sidebar{height: 100%;width: 30%;}
-		.sidebar{float: left;width: 30%;}
+		#documenter_content{left: 25%;padding-left: 0;width: 75%;background-color: #fff;}
+		#documenter_sidebar{height: 100%;width: 25%;}
+		.sidebar{float: left;width: 25%;}
 		.content{overflow-y: scroll;padding-left: 10px;padding-right: 10px;}
-		#documenter_sidebar ol{height: 100%;}
+		#documenter_sidebar ol{height: 100%;border-top:none;}
+			#documenter_sidebar ol a,#documenter_sidebar ol li ol li a{text-align: center;padding: 8px 0;}
 			#documenter_nav{margin: 0;}
-			#documenter_sidebar, #documenter_sidebar ol a{background-color: #cfcfcf;}
+			#documenter_sidebar, #documenter_sidebar ol a{background-color: #F1F1F1;}
 			#guid{padding: 0 !important;}
 			h3{height:0;margin: 0}
 
 			#documenter_sidebar ol a{color: #000;text-shadow:none;}
-			#documenter_sidebar ol a,#documenter_sidebar ol li ol li a{border:none;border-bottom:1px solid red;}
-			#documenter_sidebar ol a:hover{background-color: red;color: #f36303;}
-			#documenter_sidebar ol a.current{background-color: #f36303;color: #fff;border: none;border-bottom: 1px solid #000;}
-			#documenter_sidebar ol li ol li a.current{background-color: #fff;color: #000;}
-			#documenter_sidebar ol a.current{b}
+
+			#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;}
+			#documenter_sidebar ol li ol li a{border:none;background-color: #fff;}
+			#documenter_sidebar ol a:hover{background-color: #F1F1F1;color: #f36303;border-top:none;}
+			#documenter_sidebar ol a.current{background-color: #AAAAAA;color: #676767;font-size: 18px;border:1px solid #AAAAAA;border-left:none;}
+			#documenter_sidebar ol li ol li {border:1px solid #f36303;border-top:none; border-left:none; font-size: 16px;background-color: red !important;}
+			#documenter_sidebar ol li ol li a.current{background-color: #f36303;color: #fff;border:none;border-bottom:1px solid #f36303;}
+			#documenter_sidebar ol a.current{}
 			ol.animate{position: relative;animation:lefttoright 2s 1 ease;}
 			@-webkit-keyframes lefttoright {
-				0% {
-					left: 100%;
-					/*right:100%;*/
-					height: 0;
-					opacity: 0;
-				}
-				40% {
-					left: 0;
-					/*right: 0%;*/
-					height: 100%;
-				}
-				65% {
-					left: 4%;
-					/*right: 0%;*/
-					/*height: 100%;*/
-				}
-				75% {
-					left: 0%;
-					/*right: 0%;*/
-					/*height: 100%;*/
-				}
-				85% {
-					left: 2%;
-					/*right: 0%;*/
-					/*height: 100%;*/
-				}
-				90% {
-					left: 0;
-					/*right: 0%;*/
-					/*height: 100%;*/
-				}
-				95% {
-					left: 1%;
-					/*right: 0%;*/
-					/*height: 100%;*/
-				}
-				100% {
-					left: 0%;
-					/*right: 0%;*/
-					/*height: 100%;*/
-					opacity: 1;
-				}
+				0% {left: 100%;height: 0;opacity: 0;}
+				40% {left: 0;height: 100%;}
+				65% {left: 4%;}
+				75% {left: 0%;}
+				85% {left: 2%;}
+				90% {left: 0;}
+				95% {left: 1%;}
+				100% {left: 0%; opacity: 1; }
 			}
 			.down{animation:down 2s 1 ease;}
 			.up{animation:up 2s 1 ease;}
@@ -108,6 +78,22 @@
 				0%{top: 100%;}
 				100%{top: 0;}
 			}
+			.goods{position: relative;}
+			.goodslogo{float: left;}
+			.clamp1{
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    display: -webkit-box;
+			    -webkit-line-clamp: 1;
+			    -webkit-box-orient: vertical;
+			    font-weight: normal;
+			}
+			.name-attribute{height: 80px;padding-left: 75px;}
+			.goodsname{}
+			.goodsattribute{}
+			.price-num{height: 20px;position: absolute;right: 0;bottom: 0;width: 100%;}
+			.goodsprice{float: left;left: 75px;position: relative;}
+			.goodsnum{float: right;}
 	</style>
 	<script>
 	$.get("js/goodlist.json",function  (data) {
@@ -150,7 +136,7 @@
 						<li><a href="#elements_tooltips">叁-玖</a>
 					</ol>
 				</li>
-				<li><a href="#final_words">肆</a></li>
+				<li><a href="#final_words">肆叁-贰壹</a></li>
 			</ol>
 		</div>
 	</div>
@@ -159,6 +145,34 @@
 			<div class="content">
 				<div class="section" id="guid">
 					<h1>壹</h1>
+					<div class="goods">
+						<div class="goodslogo">
+							<img src="img/logo.png" height="70" width="70" alt="商品图片" />
+						</div>
+						<div class="name-attribute">
+							<div class="goodsname clamp1">
+								商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+							</div>
+							<div class="goodsattribute clamp1">
+								商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+							</div>
+							<div class="price-num">
+								<div class="goodsprice">
+									¥<span>50.00</span>
+								</div>
+								<div class="goodsnum">
+									<div class="add-cart">
+										<img src="" alt="添到购物车" />
+									</div>
+									<div class="reduce-add">
+										<a href="javascript:;">-</a>
+										<span>1</span>
+										<a href="javascript:;">+</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div >
 				<div class="section" id="getting_started">
 					<h3></h3>
@@ -220,7 +234,7 @@
 					</p>
 				</div >
 				<div class="section" id="final_words">
-					<h3>肆</h3><hr class="notop">
+					<h3>.</h3><hr class="notop">
 					<p>
 						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
 					</p>

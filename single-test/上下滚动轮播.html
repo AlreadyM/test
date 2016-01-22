@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../../Public/base.css" />
+	<title>上下滚动新闻轮播</title>
+	<style type="text/css">
+	#scroll{border:1px solid #ccc;width:170px;height:80px;line-height:40px;overflow:hidden;}
+	#scroll .scroller{list-style-type:none;margin:0;padding:0;margin-left:6px;height: 20px;}
+	/*系统支持ie8就选line-height:16px;，但不支持opera 否则选line-height:20px;*/
+	#scroll .scroller a{font-size:12px; line-height:20px;}
+	</style>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+		<div id="scroll">
+		<div id="marqueebox">
+		<div class="scroller">
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#FF0000">滚动文字一号</span></a>
+			 <a href="http://www.zzjs.net/" target="_blank"><span style="color:#FF0000">滚动文字二号</span></a>
+		 </div>
+		<div class="scroller">
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字三号</span></a>
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字四号</span></a>
+		</div>
+		<div class="scroller">
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字五号</span></a> 
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字六号</span></a>
+		</div>
+		<div class="scroller">
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字七号</span></a> 
+			<a href="http://www.zzjs.net/" target="_blank"><span style="color:#3333FF">滚动文字八号</span></a>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+		<script language="javascript">
+		function startmarquee(lh,speed,delay) {
+			var p=false;
+			var t;
+			var o=document.getElementById("marqueebox");
+			o.innerHTML+=o.innerHTML;
+			o.style.marginTop=0;
+			o.onmouseover=function(){p=true;}
+			o.onmouseout=function(){p=false;}
+			
+			function start(){
+				t=setInterval(scrolling,speed);
+				if(!p) o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+			}
+			
+			function scrolling(){
+				if(parseInt(o.style.marginTop)%lh!=0){
+					o.style.marginTop=parseInt(o.style.marginTop)-1+"px";
+					if(Math.abs(parseInt(o.style.marginTop))>=o.scrollHeight/2) o.style.marginTop=0;
+				}else{
+					clearInterval(t);
+					setTimeout(start,delay);
+				}
+			}
+			setTimeout(start,delay);
+		}
+		startmarquee(80,20,1500);
+		</script>
+	<footer></footer>
+</body>
+</html>

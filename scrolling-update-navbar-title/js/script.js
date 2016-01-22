@@ -148,17 +148,17 @@ $(document).ready(function() {
 					hasSub = next.is('ol');
 					isSub = !parent.is('#documenter_nav');
 					
-					// nav.find('ol:visible').not(parent).hide();
-					nav.find('ol:visible').not(parent).slideUp('fast');
+					nav.find('ol:visible').not(parent).hide();
+					// nav.find('ol:visible').not(parent).slideUp('fast');
 
 					if(isSub){
 						parent.prev().addClass('current');
-						// parent.stop().show();
-						parent.stop().slideDown('fast');
+						parent.stop().show();
+						// parent.stop().slideDown('fast');
 
 					}else if(hasSub){
-						// next.stop().show();
-						next.stop().slideDown('fast');
+						next.stop().show();
+						// next.stop().slideDown('fast');
 					}
 					win.bind('hashchange', hashchange);
 					return index;
@@ -182,7 +182,7 @@ $(document).ready(function() {
 // });;
 $(".animate").removeClass('animate');
 $(".current").parent("li").children("ol").addClass('animate');
-			title.fadeOut(400);
+			title.fadeOut();
 			title.html(current.html());
 			title.fadeIn(500);
 			console.log("change");
