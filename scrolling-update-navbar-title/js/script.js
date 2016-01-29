@@ -139,7 +139,7 @@ $(document).ready(function() {
 				if(sections[i-1].pos <= pos+offset){
 					index = i;
 					navanchors.removeClass('current');
-					current = navanchors.eq(i-1);
+					current = navanchors.eq(i-2);
 					current.addClass('current');
 								// console.log(i);
 					parent = current.parent().parent();
