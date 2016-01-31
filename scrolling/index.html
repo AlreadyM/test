@@ -20,6 +20,8 @@
 	<!-- // <script src="js/shBrushJScript.js"></script> -->
 	<script></script>
 	<script src="js/script.js"></script>
+	<script src="js/lazy_load.js"></script>
+
 	<style>
 		*{box-sizing:border-box;}
 				html{background-color:#EEEEEE;color:#383838;}
@@ -83,6 +85,7 @@
 				
 					.goods{position: relative;border-bottom: 1px solid #C9C9C9;padding-right: 10px;padding-top:10px;}
 					.goodslogo{float: left;}
+					.goodslogo img{width: 70px;height: 70px;}
 					.clamp1{
 						overflow: hidden;
 					    text-overflow: ellipsis;
@@ -119,37 +122,12 @@
 	<div class="sidebar">
 		<div id="documenter_sidebar">
 			<ol id="documenter_nav">
-				<script>
-				$(function  () {
-					$.get("js/goodlist.json",function  (data) {
-
-						$.each(data,function  (i,item) {
-							var sNav = "";
-							var sArray = data[i].sArray;
-							$.each(sArray,function  (j,sItem) {
-								var sId = sArray[j].secId;
-								var stext = sArray[j].stitle;
-								console.log(sId);
-								sNav+= "<li><a href='#"+sId+"'>"+stext+"</a></li>";
-								console.log(sNav);
-							})
-							var firId = data[i].firId,
-								firtext = data[i].firtext;
-							var firstNavtext = "<li><a class='' href='#"+firId+"'>"+firtext+"</a><ol>"+sNav+"</ol></li>";
-							
-							console.log(firstNavtext);
-							$("body").append(firstNavtext);
-
-						});
-					})
-				})
-				</script>
-				<!-- <li><a class="current" href="#guid">壹</a>
+				
+				<li><a class="current" href="#guid">壹</a>
 					<ol>
 						<li><a href="#getting_started_about_grape">壹-壹</a>
 						<li><a href="#getting_started_files">壹-贰</a>
 						<li><a href="#getting_started_credits">壹-叁</a>
-						<li><a href="#getting_started_span_style">壹-肆</a>
 					</ol>
 				</li>
 				<li><a href="#getting_started">贰</a>
@@ -160,21 +138,7 @@
 						<li><a href="#getting_started_span_style">贰-肆</a>
 					</ol>
 				</li>
-				<li><a href="#elements">叁</a>
-					<ol>
-						<li><a href="#elements_blocks">叁-壹</a>
-						<li><a href="#elements_forms">叁-贰</a>
-						<li><a href="#elements_table">叁-叁</a>
-						<li><a href="#elements_charts">叁-肆</a>
-						<li><a href="#elements_lists">叁-伍</a>
-						<li><a href="#elements_tabs">叁-陆</a>
-						<li><a href="#elements_notifications">叁-柒</a>
-						<li><a href="#elements_alert_boxes">叁-扒</a>
-						<li><a href="#elements_tooltips">叁-玖</a>
-					</ol>
-				</li>
-				<li><a href="#final_words">肆</a></li>
-			</ol> -->
+			</ol>
 		</div>
 	</div>
 
@@ -187,7 +151,7 @@
 					<div class="goodscontent">
 						<div class="goods">
 							<div class="goodslogo">
-								<img src="img/logo.png" height="70" width="70" alt="商品图片" />
+								<img class="lazy" data-original="img/example1.jpg"  alt="商品图片" />
 							</div>
 							<div class="name-attribute">
 								<div class="goodsname clamp1">
@@ -216,7 +180,7 @@
 						</div>
 						<div class="goods">
 							<div class="goodslogo">
-								<img src="img/logo.png" height="70" width="70" alt="商品图片" />
+								<img class="lazy" data-original="img/example2.jpg"  alt="商品图片" />
 							</div>
 							<div class="name-attribute">
 								<div class="goodsname clamp1">
@@ -243,171 +207,449 @@
 								</div>
 							</div>
 						</div>
-						<div class="goods">
-							<div class="goodslogo">
-								<img src="img/logo.png" height="70" width="70" alt="商品图片" />
-							</div>
-							<div class="name-attribute">
-								<div class="goodsname clamp1">
-									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
-								</div>
-								<div class="goodsattribute clamp1">
-									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
-								</div>
-								<div class="price-obj">
-									<div class="goodsprice">
-										¥<span>50.00</span>
-									</div>
-									<div class="goodsobj" >
-										<div class="add-cart " >
-											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
-											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
-										</div>
-										<div class="reduce-add">
-											<a class="reduceless" href="javascript:;">－</a>
-											<span>1</span>
-											<a class="addmore" href="javascript:;">＋</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="goods">
-							<div class="goodslogo">
-								<img src="img/logo.png" height="70" width="70" alt="商品图片" />
-							</div>
-							<div class="name-attribute">
-								<div class="goodsname clamp1">
-									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
-								</div>
-								<div class="goodsattribute clamp1">
-									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
-								</div>
-								<div class="price-obj">
-									<div class="goodsprice">
-										¥<span>50.00</span>
-									</div>
-									<div class="goodsobj" >
-										<div class="add-cart " >
-											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
-											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
-										</div>
-										<div class="reduce-add">
-											<a class="reduceless" href="javascript:;">－</a>
-											<span>1</span>
-											<a class="addmore" href="javascript:;">＋</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
 					</div>
 					<h4>壹-贰</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example3.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example4.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<h4>壹-叁</h4>
-					<h4>壹-肆</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example5.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example6.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div >
-				<script>
-				$(function  () {
-					//开始添加到购物车
-					$("body").delegate( ".addcart","click", function  () {
-						$(this).closest('.add-cart').hide();
-						$(this).closest(".add-cart").next(".reduce-add").show();
-
-					});
-					//添加商品数量
-					$(".reduce-add").delegate('.addmore','click',function  () {
-						var obj = $(this).siblings("span");
-							num = parseInt(obj.text())+1;
-							obj.text(num);
-					})
-					$(".reduce-add").delegate('.reduceless','click',function  () {
-						var obj = $(this).siblings("span");
-							num = parseInt(obj.text())-1;
-
-							if (num>0) {
-								obj.text(num);
-
-							}else{
-								$(this).closest(".reduce-add").hide();
-								$(this).closest(".reduce-add").siblings(".add-cart").show();
-							};
-					})
-				})
-				</script>
 				<div class="section" id="getting_started">
 					<h3>贰</h3>
 					<!-- <hr class="notop"> -->
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
+
 					<h4 id="getting_started_about_grape">贰-壹</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<div class="goods">
-						商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example7.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example8.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<h4 id="getting_started_files">贰-贰</h4>
-					<div class="goods">
-						商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位商品栏位
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example9.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example10.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<h4 id="getting_started_credits">贰-叁</h4>
-					<p>
-					<h4 id="getting_started_span_style">
-						贰-肆
-					</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-				</div class="section">
-				<div class="section" id="elements">
-					<h3></h3>
-					<!-- <hr class="notop"> -->
-					<h4 id="elements_blocks">叁-壹</h4>
-					<div class="goods">
-						商品栏位商品栏位商品栏位商品栏位商品栏位
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example11.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example12.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<h4 id="elements_forms">叁-贰</h4>
-					<p>For more examples please look at the <strong>forms.html</strong>.</p>
-					<h4 id="elements_table">叁-叁</h4>
-					<p>测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</p>
-					<h4 id="elements_charts">叁-肆</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<h4 id="elements_lists">叁-伍</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<h4 id="elements_tabs">叁-陆</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<h4 id="elements_notifications">叁-柒</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<h4 id="elements_alert_boxes">叁-捌</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<h4 id="elements_tooltips">叁-玖</h4>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-				</div >
-				<div class="section" id="final_words">
-					<h3>肆</h3><hr class="notop">
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-					<p>
-						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
-					</p>
-				</div >
+					<h4 id="getting_started_span_style">贰-肆</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example1.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example2.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 				
 		</div>
+
+
+		<script>
+			$(function  () {
+				//开始添加到购物车
+				$("body").delegate( ".addcart","click", function  () {
+					$(this).closest('.add-cart').hide();
+					$(this).closest(".add-cart").next(".reduce-add").show();
+
+				});
+				//添加商品数量
+				$(".reduce-add").delegate('.addmore','click',function  () {
+					var obj = $(this).siblings("span");
+						num = parseInt(obj.text())+1;
+						obj.text(num);
+				})
+				$(".reduce-add").delegate('.reduceless','click',function  () {
+					var obj = $(this).siblings("span");
+						num = parseInt(obj.text())-1;
+
+						if (num>0) {
+							obj.text(num);
+
+						}else{
+							$(this).closest(".reduce-add").hide();
+							$(this).closest(".reduce-add").siblings(".add-cart").show();
+						};
+				})
+				$('img.lazy').lazyload({
+				 threshold : 200,
+				 effect : "fadeIn"
+				});
+			})
+		</script>
+
+		<!--<script>
+		 $(function  () {
+			$.get("js/goodlist.json",function  (data) {
+
+				$.each(data,function  (i,item) {
+					var sNav = "";
+					var sArray = data[i].sArray;
+					$.each(sArray,function  (j,sItem) {
+						var sId = sArray[j].secId;
+						var stext = sArray[j].stitle;
+						console.log(sId);
+						sNav+= "<li><a href='#"+sId+"'>"+stext+"</a></li>";
+						console.log(sNav);
+					})
+					var firId = data[i].firId,
+						firtext = data[i].firtext;
+					var firstNavtext = "<li><a class='' href='#"+firId+"'>"+firtext+"</a><ol>"+sNav+"</ol></li>";
+					
+					console.log(firstNavtext);
+					$("#documenter_nav").append(firstNavtext);
+					$.getScript("js/script.js",function  () {
+						scroller();
+					});
+				});
+			})
+		})
+		</script> -->
 </body>
 </html>

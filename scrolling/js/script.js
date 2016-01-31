@@ -8,6 +8,9 @@
  */
  document.createElement('section');var duration=500,easing='swing';
 $(document).ready(function() {
+	// function scroller () {
+		// body...
+	
 	var timeout,
 		sections = new Array(),
 		sectionscount = 0,
@@ -182,7 +185,7 @@ $(document).ready(function() {
 // });;
 $(".animate").removeClass('animate');
 $(".current").parent("li").children("ol").addClass('animate');
-			title.fadeOut(400);
+			title.hide();
 			title.html(current.html());
 			title.fadeIn(500);
 			console.log("change");
@@ -192,5 +195,7 @@ $(".current").parent("li").children("ol").addClass('animate');
 		
 	}
 	
+
+	// }
 	
 });
