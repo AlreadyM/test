@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- <link rel="stylesheet" href="../css/base.css" /> -->
+    <script src="../jquery/jquery-2.1.4.min.js"></script>
+	<title>滚动测试</title>
+	<style>
+	.scrollarea{height: 50px;overflow: hidden;}
+	.scrollarea ul li{list-style:none;height: 50px;background-color: #cfcfcf;}
+	</style>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<div class="scrollarea">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</div>
+	<footer></footer>
+	<script>
+	$(function  () {
+		var scroller = $(".scrollarea").find("li");
+		var i=0;
+		console.log(scroller);
+		setInterval(function  () {
+			scroller.eq(i).slideUp(1000)
+			// scroller.eq(i-1).show();
+			// console.log(i);
+			i++;
+			if(i>scroller.length){
+				scroller.show();
+				i=0;
+				// scroller.eq(1).slideDown();
+			}
+		},2000)
+	})
+	</script>
+</body>
+</html>
