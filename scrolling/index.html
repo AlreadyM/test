@@ -34,13 +34,13 @@
 				#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
 				#documenter_sidebar ol{border-top:1px solid #212424;}
 				#documenter_sidebar ol a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
-				#documenter_sidebar ol a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+				#documenter_sidebar ol a:hover{color:#000;background-color: #F1F1F1;border-top:none;}
 				#documenter_sidebar ol a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
 				#documenter_copyright{display:block !important;visibility:visible !important;}
-				.showtitle{position: fixed;top: 0;right: 0;width: 75%;height: 27px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 16px;}
+				.showtitle{position: fixed;top: 0;right: 0;width: 75%;height: 27px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 16px;line-height: 27px;}
 				html,body,.sidebar,.content{height: 100%;width: 100%;}
 				#documenter_sidebar{width: 100%;}
-				#documenter_content{left: 25%;padding-left: 0;width: 75%;background-color: #fff;padding-bottom: 200%;}
+				#documenter_content{left: 25%;padding-left: 10px;width: 75%;background-color: #fff;padding-bottom: 200%;}
 				#documenter_sidebar{height: 100%;width: 25%;}
 				.sidebar{float: left;width: 25%;}
 				.content{overflow-y: scroll;padding-left: 10px;}
@@ -53,14 +53,15 @@
 
 					#documenter_sidebar ol a{color: #000;text-shadow:none;}
 
-					#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;}
+					#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;height: 35px;overflow: hidden;line-height: 23px;}
 					#documenter_sidebar ol li ol li a{border:none;background-color: #fff;}
-					#documenter_sidebar ol a:hover{background-color: #F1F1F1;color: #f36303;border-top:none;}
+
 					#documenter_sidebar ol a.current{background-color: #AAAAAA;color: #676767;font-size: 18px;border:1px solid #AAAAAA;border-left:none;}
 					#documenter_sidebar ol li ol li {border:1px solid #f36303;border-top:none; border-left:none; font-size: 16px;background-color: red !important;}
 					#documenter_sidebar ol li ol li a.current{background-color: #f36303;color: #fff;border:none;border-bottom:1px solid #f36303;}
 					#documenter_sidebar ol a.current{}
-					#documenter_content h4{font-size: 18px;font-weight: normal;margin: 0;margin-bottom: 0px;}
+					#documenter_content h4{font-size: 18px;font-weight: normal;margin: 0;margin-bottom: 0px;line-height: 26px;padding-left: 10px;}
+
 					ol.animate{position: relative;animation:lefttoright 2s 1 ease;}
 					@-webkit-keyframes lefttoright {
 						0% {left: 100%;height: 0;opacity: 0;}
@@ -86,6 +87,7 @@
 					.goods{position: relative;border-bottom: 1px solid #C9C9C9;padding-right: 10px;padding-top:10px;}
 					.goodslogo{float: left;}
 					.goodslogo img{width: 70px;height: 70px;}
+
 					.clamp1{
 						overflow: hidden;
 					    text-overflow: ellipsis;
@@ -97,14 +99,15 @@
 					.name-attribute{height: 80px;padding-left: 75px;}
 					.goodsname{font-weight: bold;font-size: 16px;line-height: 22px;}
 					.goodsattribute{font-size: 12px;line-height: 20px;color:#FF6969;}
-					.price-obj{height: 20px;position: absolute;right: 0;bottom: 15px;width: 100%;}
+					.price-obj{height: 20px;position: absolute;right: 0;bottom: 9px;width: 100%;}
 					.goodsprice{float: left;left: 75px;position: relative;color: #D86C00;font-size: 18px;}
 					.goodsobj{float: right;}
 					.section h4,.section h3{border-left: 3px solid #CCCCCC;background-color: #F1F1F1;margin-right: -10px;margin: 0 !important;padding: 0;height: 27px;font-size: 16px !important;}
-					.section h3{height: 0;}
+					.double h3{display: none;}
+					.section h3{line-height: 27px;padding-left: 10px;}
 					.goodscontent .goods:last-child{border:none;}
 					.我{font-size: 20px;font-weight: bold;color: red;}
-					.add-cart img{height: 30px;width: 30px;position: relative;top: 10px;}
+					.add-cart img{height: 30px;width: 30px;position: relative;top: 5px;}
 					.add-cart{position: relative;bottom: 15px;right: 10px;}
 					.none .addcart,.nonegoods{display: none;}
 					.none .nonegoods{display: block;}
@@ -122,32 +125,46 @@
 	<div class="sidebar">
 		<div id="documenter_sidebar">
 			<ol id="documenter_nav">
-				
-				<li><a class="current" href="#guid">壹</a>
+				<li><a class="current" href="#one">壹贰叁肆伍</a>
 					<ol>
-						<li><a href="#getting_started_about_grape">壹-壹</a>
-						<li><a href="#getting_started_files">壹-贰</a>
-						<li><a href="#getting_started_credits">壹-叁</a>
+						<li><a href="#one_one">壹-壹</a>
+						<li><a href="#one_two">壹-贰</a>
+						<li><a href="#one_three">壹-叁</a>
 					</ol>
 				</li>
-				<li><a href="#getting_started">贰</a>
+				<li><a href="#two">贰</a>
 					<ol>
-						<li><a href="#getting_started_about_grape">贰-壹</a>
-						<li><a href="#getting_started_files">贰-贰</a>
-						<li><a href="#getting_started_credits">贰-叁</a>
-						<li><a href="#getting_started_span_style">贰-肆</a>
+						<li><a href="#two_one">贰-壹</a>
+						<li><a href="#two_two">贰-贰</a>
+						<li><a href="#two_three">贰-叁</a>
+						<li><a href="#two_four">贰-肆</a>
 					</ol>
 				</li>
+				<li><a href="#three">叁</a>
+					<!-- <ol>
+						<li><a href="#three_one">叁</a></li>
+					</ol> -->
+				</li>
+				<li><a href="#four">肆</a>
+				<!-- 	<ol>
+						<li><a href="#three_one">肆</a></li>
+					</ol> -->
+				</li>
+				<!-- <li><a href="#five">伍</a>
+					<ol>
+						<li><a href="#three_one">伍</a></li>
+					</ol>
+				</li> -->
 			</ol>
 		</div>
 	</div>
 
 		<div id="documenter_content">
-			<div class="content">
-				<div class="section" id="guid">
-					<h3></h3>
-					
-					<h4>壹-壹</h4>
+			<!-- <div class="content"> -->
+				<div class="section double" id="one">
+					<h3>壹贰叁肆</h3>
+					<!-- <p>一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级</p> -->
+					<h4 id="one_one">壹-壹</h4>
 					<div class="goodscontent">
 						<div class="goods">
 							<div class="goodslogo">
@@ -208,7 +225,8 @@
 							</div>
 						</div>
 					</div>
-					<h4>壹-贰</h4>
+
+					<h4 id="one_two">壹-贰</h4>
 
 					<div class="goodscontent">
 						<div class="goods">
@@ -270,7 +288,8 @@
 							</div>
 						</div>
 					</div>
-					<h4>壹-叁</h4>
+
+					<h4 id="one_three">壹-叁</h4>
 
 					<div class="goodscontent">
 						<div class="goods">
@@ -287,6 +306,7 @@
 								<div class="price-obj">
 									<div class="goodsprice">
 										¥<span>5230.00</span>
+
 									</div>
 									<div class="goodsobj" >
 										<div class="add-cart none">
@@ -333,11 +353,12 @@
 						</div>
 					</div>
 				</div >
-				<div class="section" id="getting_started">
-					<h3>贰</h3>
+
+				<div class="section double" id="two">
+					<h3></h3>
 					<!-- <hr class="notop"> -->
 
-					<h4 id="getting_started_about_grape">贰-壹</h4>
+					<h4 id="two_one">贰-壹</h4>
 					
 					<div class="goodscontent">
 						<div class="goods">
@@ -399,7 +420,8 @@
 							</div>
 						</div>
 					</div>
-					<h4 id="getting_started_files">贰-贰</h4>
+
+					<h4 id="two_two">贰-贰</h4>
 					
 					<div class="goodscontent">
 						<div class="goods">
@@ -461,7 +483,8 @@
 							</div>
 						</div>
 					</div>
-					<h4 id="getting_started_credits">贰-叁</h4>
+
+					<h4 id="two_three">贰-叁</h4>
 					
 					<div class="goodscontent">
 						<div class="goods">
@@ -523,7 +546,8 @@
 							</div>
 						</div>
 					</div>
-					<h4 id="getting_started_span_style">贰-肆</h4>
+
+					<h4 id="two_four">贰-肆</h4>
 
 					<div class="goodscontent">
 						<div class="goods">
@@ -586,7 +610,22 @@
 						</div>
 					</div>
 				</div>
-			</div>
+
+				<div class="section" id="three">
+					<h3 id="three_one">叁</h3>
+					<p>
+						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+					</p>
+					<br /><br /><br /><br /><br />
+				</div><div class="section" id="four">
+					<h3 id="four_one">肆</h3>
+					<p>
+						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+					</p>
+					<br /><br /><br /><br /><br />
+				</div>
+				
+			<!-- </div> -->
 				
 		</div>
 
@@ -618,7 +657,7 @@
 						};
 				})
 				$('img.lazy').lazyload({
-				 threshold : 200,
+				 threshold : 100,
 				 effect : "fadeIn"
 				});
 			})
