@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html>  
 <!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
 <!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
 <!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
@@ -11,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="css/documenter_style.css" media="all">
 	<script src="js/jquery.1.5.1.js"></script>
+	<!-- // <script src="//cdn.bootcss.com/jquery/1.6.4/jquery.min.js"></script> -->
 	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
 	<script src="js/jquery.easing.js"></script>
 	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
-
+	<!-- // <script src="js/shCore.js"></script> -->
+	<!-- // <script src="js/shBrushXml.js"></script> -->
+	<!-- // <script src="js/shBrushJScript.js"></script> -->
 	<script></script>
 	<script src="js/script.js"></script>
 	<script src="js/lazy_load.js"></script>
@@ -113,6 +116,7 @@
 					.reduce-add a{height: 20px;width: 20px;display: inline-block;border-radius: 50%;text-align: center; font-size: 18px;line-height: 20px;text-decoration: none;}
 					.addmore{color: #fff;background-color: #f36303;}
 					.reduceless{color: #f36303;background-color: #fff;border:1px solid #f36303;}
+
 	</style>
 
 </head>
@@ -121,7 +125,7 @@
 	<div class="sidebar">
 		<div id="documenter_sidebar">
 			<ol id="documenter_nav">
-				<li><a class="current" href="#one">壹贰叁肆</a>
+				<li><a class="current" href="#one">壹贰叁肆伍</a>
 					<ol>
 						<li><a href="#one_one">壹-壹</a>
 						<li><a href="#one_two">壹-贰</a>
@@ -136,16 +140,30 @@
 						<li><a href="#two_four">贰-肆</a>
 					</ol>
 				</li>
-				<li><a href="#three">叁</a></li>
-				<li><a href="#four">肆</a></li>
+				<li><a href="#three">叁</a>
+					<!-- <ol>
+						<li><a href="#three_one">叁</a></li>
+					</ol> -->
+				</li>
+				<li><a href="#four">肆</a>
+				<!-- 	<ol>
+						<li><a href="#three_one">肆</a></li>
+					</ol> -->
+				</li>
+				<!-- <li><a href="#five">伍</a>
+					<ol>
+						<li><a href="#three_one">伍</a></li>
+					</ol>
+				</li> -->
 			</ol>
 		</div>
 	</div>
 
 		<div id="documenter_content">
+			<!-- <div class="content"> -->
 				<div class="section double" id="one">
 					<h3>壹贰叁肆</h3>
-
+					<!-- <p>一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级一级</p> -->
 					<h4 id="one_one">壹-壹</h4>
 					<div class="goodscontent">
 						<div class="goods">
@@ -337,7 +355,8 @@
 				</div >
 
 				<div class="section double" id="two">
-					<h3>贰</h3>
+					<h3></h3>
+					<!-- <hr class="notop"> -->
 
 					<h4 id="two_one">贰-壹</h4>
 					
@@ -663,6 +682,9 @@
 					</p>
 					<br /><br /><br /><br /><br />
 				</div>
+				
+			<!-- </div> -->
+				
 		</div>
 
 
@@ -696,5 +718,33 @@
 				});
 			})
 		</script>
+
+		<!--<script>
+		 $(function  () {
+			$.get("js/goodlist.json",function  (data) {
+
+				$.each(data,function  (i,item) {
+					var sNav = "";
+					var sArray = data[i].sArray;
+					$.each(sArray,function  (j,sItem) {
+						var sId = sArray[j].secId;
+						var stext = sArray[j].stitle;
+						console.log(sId);
+						sNav+= "<li><a href='#"+sId+"'>"+stext+"</a></li>";
+						console.log(sNav);
+					})
+					var firId = data[i].firId,
+						firtext = data[i].firtext;
+					var firstNavtext = "<li><a class='' href='#"+firId+"'>"+firtext+"</a><ol>"+sNav+"</ol></li>";
+					
+					console.log(firstNavtext);
+					$("#documenter_nav").append(firstNavtext);
+					$.getScript("js/script.js",function  () {
+						scroller();
+					});
+				});
+			})
+		})
+		</script> -->
 </body>
 </html>
