@@ -29,6 +29,7 @@ body{
 	min-height:100%;
 	height:auto;
 	width:100%;
+	-webkit-overflow-scrolling: touch;
 }
 footer, header, section {
 	display:block;
@@ -77,8 +78,6 @@ strong{
 	z-index:1;
 }
 #documenter_sidebar{
-	-moz-box-shadow:0 0 6px rgba(3,3,3,0.6);
-	-webkit-box-shadow:0 0 6px rgba(3,3,3,0.6);
 	box-shadow:0 0 6px rgba(3,3,3,0.6);
 	position:fixed;
 	left:0;
@@ -136,18 +135,22 @@ noscript p{
 	background-position:center center;
 	background-repeat:no-repeat;
 }
-
+#documenter_nav{
+	position: relative;
+}
 #documenter_sidebar ol{
 	font-size:12px;
 	font-weight:700;
 	min-height:150px;
 	height:75%;
 	overflow:auto;
+	-webkit-overflow-scrolling:touch;
 }
 
 #documenter_sidebar ol li{
 	text-align:right;
 	padding:0;
+	position: relative;
 }
 #documenter_sidebar ol a{
 	display:block;
@@ -279,7 +282,7 @@ noscript p{
  * Print styles.
 */
 @media print {
-	 * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+	 * { background: transparent !important; color: black !important; text-shadow: none !important; -webkit-filter:none !important; filter:none !important;
 	-ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
 	a, a:visited { color: #444 !important; text-decoration: underline; }
 	a[href]:after { content: " (" attr(href) ")"; }
@@ -294,8 +297,6 @@ noscript p{
 	hr { border-top:1px solid #000 !important;border-bottom:0 !important; }
 	
 	#documenter_sidebar{
-		-moz-box-shadow:none;
-		-webkit-box-shadow:none;
 		box-shadow:none;
 		position:absolute;
 		left:10px;
@@ -347,3 +348,10 @@ noscript p{
 		line-height:19px;
 	}
 }
+
+.cart{height: 50px;background-color: #F8F8F8;position:fixed;bottom:0;left:0;width:100%;z-index: 200;border-top:1px solid #D3D3D3;}
+.cart .cartNum{padding-left:10px;float: left;position:relative;height: 34px;min-width:150px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+.cart .cartNum img{width: 30px;height: 30px;position:absolute;left: 10px;top: 0;}
+.cart .cartNum span{position:absolute;left: 28px;top: -5px;font-size: 16px;color: #fff;font-weight: bold;height: 20px;width: 20px;border-radius:50%;background-color: #f36303;text-align: center;line-height: 20px;}
+.cart .cartNum p{position:absolute;	left:60px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);margin:0;color: #f36303;font-size: 18px;font-weight: bold;}
+.cart a{position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%); right: 10px;color: #fff;display:inline-block;padding:6px 12px;font-size: 14px;font-weight: bold; background-color: #f36303;text-decoration:none;border-radius:5px;}

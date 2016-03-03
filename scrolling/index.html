@@ -11,12 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="css/documenter_style.css" media="all">
 	<script src="js/jquery.1.5.1.js"></script>
-	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
-	<script src="js/jquery.easing.js"></script>
+	<!-- <script src="js/jquery.scrollTo-1.4.2-min.js"></script> -->
+	<!-- <script src="js/jquery.easing.js"></script> -->
 	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
 
-	<script></script>
-	<script src="js/script.js"></script>
+	<script src="js/active-nav.js"></script>
+	<!-- <script src="js/script.js"></script> -->
 	<script src="js/lazy_load.js"></script>
 
 	<style>
@@ -38,7 +38,7 @@
 				html,body,.sidebar,.content{height: 100%;width: 100%;}
 				#documenter_sidebar{width: 100%;}
 				#documenter_content{left: 25%;padding-left: 10px;width: 75%;background-color: #fff;padding-bottom: 200%;}
-				#documenter_sidebar{height: 100%;width: 25%;}
+				#documenter_sidebar{height: 100%;width: 25%;padding-bottom:48px;}
 				.sidebar{float: left;width: 25%;}
 				.content{overflow-y: scroll;padding-left: 10px;}
 				#documenter_sidebar ol{height: 100%;border-top:none;}
@@ -50,7 +50,7 @@
 
 					#documenter_sidebar ol a{color: #000;text-shadow:none;}
 
-					#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;height: 35px;overflow: hidden;line-height: 23px;}
+					#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;height: 40px;overflow: hidden;line-height: 23px;}
 					#documenter_sidebar ol li ol li a{border:none;background-color: #fff;}
 
 					#documenter_sidebar ol a.current{background-color: #AAAAAA;color: #676767;font-size: 18px;border:1px solid #AAAAAA;border-left:none;}
@@ -113,31 +113,297 @@
 					.reduce-add a{height: 20px;width: 20px;display: inline-block;border-radius: 50%;text-align: center; font-size: 18px;line-height: 20px;text-decoration: none;}
 					.addmore{color: #fff;background-color: #f36303;}
 					.reduceless{color: #f36303;background-color: #fff;border:1px solid #f36303;}
+
+					
+					#documenter_content{position: absolute;height: 100%;overflow: auto;z-index: 100;}
 	</style>
 
 </head>
 <body>
-	<div class="showtitle"><span></span></div>
+	<!-- <div class="showtitle"><span></span></div> -->
+	<div class="cart">
+		<div class="cartNum">
+			<img src="img/cart.png" alt="购物车">
+			<span>2</span>
+			<p>¥&nbsp;0.00</p>
+		</div>
+		<a href="javascript:;">去结算</a>
+	</div>
 	<div class="sidebar">
 		<div id="documenter_sidebar">
 			<ol id="documenter_nav">
-				<li><a class="current" href="#one">壹贰叁肆</a>
+				<li><a class="current levelo" href="#one">壹贰叁肆</a>
 					<ol>
-						<li><a href="#one_one">壹-壹</a>
-						<li><a href="#one_two">壹-贰</a>
-						<li><a href="#one_three">壹-叁</a>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
 					</ol>
 				</li>
-				<li><a href="#two">贰</a>
+				<li><a href="#two" class="levelo">贰</a>
 					<ol>
-						<li><a href="#two_one">贰-壹</a>
-						<li><a href="#two_two">贰-贰</a>
-						<li><a href="#two_three">贰-叁</a>
-						<li><a href="#two_four">贰-肆</a>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
 					</ol>
 				</li>
-				<li><a href="#three">叁</a></li>
-				<li><a href="#four">肆</a></li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a href="#three" class="levelo">叁</a></li>
+				<li><a href="#four" class="levelo">肆</a></li>
 			</ol>
 		</div>
 	</div>
