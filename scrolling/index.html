@@ -37,11 +37,12 @@
 				.showtitle{position: fixed;top: 0;right: 0;width: 75%;height: 27px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 16px;line-height: 27px;}
 				html,body,.sidebar,.content{height: 100%;width: 100%;}
 				#documenter_sidebar{width: 100%;}
-				#documenter_content{left: 25%;padding-left: 10px;width: 75%;background-color: #fff;padding-bottom: 200%;}
-				#documenter_sidebar{height: 100%;width: 25%;padding-bottom:48px;}
+				#documenter_content{left:0;padding-left: 10px;width: 100%;background-color: #fff;padding-bottom: 10%;}
+				#documenter_sidebar{height: 100%;width: 25%;padding-bottom:48px;overflow: auto;	-webkit-overflow-scrolling:touch;
+position: absolute;}
 				.sidebar{float: left;width: 25%;}
 				.content{overflow-y: scroll;padding-left: 10px;}
-				#documenter_sidebar ol{height: 100%;border-top:none;}
+				#documenter_sidebar ol{height: auto;border-top:none;}
 					#documenter_sidebar ol a,#documenter_sidebar ol li ol li a{text-align: center;padding: 8px 0;}
 					#documenter_nav{margin: 0;}
 					#documenter_sidebar, #documenter_sidebar ol a{background-color: #F1F1F1;}
@@ -115,11 +116,11 @@
 					.reduceless{color: #f36303;background-color: #fff;border:1px solid #f36303;}
 
 					
-					#documenter_content{position: absolute;height: 100%;overflow: auto;z-index: 100;}
-	</style>
+					.scrollarea{position: absolute;right: 0;top: 0;height: 100%;width: 75%;overflow: scroll;-webkit-overflow-scrolling:touch;}
+</style>
 
 </head>
-<body>
+<body style="background-color: red;overflow:hidden;">
 	<!-- <div class="showtitle"><span></span></div> -->
 	<div class="cart">
 		<div class="cartNum">
@@ -129,7 +130,7 @@
 		</div>
 		<a href="javascript:;">去结算</a>
 	</div>
-	<div class="sidebar">
+	<!-- <div class="container"> -->
 		<div id="documenter_sidebar">
 			<ol id="documenter_nav">
 				<li><a class="current levelo" href="#one">壹贰叁肆</a>
@@ -406,9 +407,9 @@
 				<li><a href="#four" class="levelo">肆</a></li>
 			</ol>
 		</div>
-	</div>
-
-		<div id="documenter_content">
+		
+		<div class="scrollarea">
+			<div id="documenter_content">
 				<div class="section double" id="one">
 					<h3>壹贰叁肆</h3>
 
@@ -930,6 +931,9 @@
 					<br /><br /><br /><br /><br />
 				</div>
 		</div>
+		</div>
+		
+	<!-- </div> -->
 
 
 		<script>
@@ -960,6 +964,10 @@
 				 threshold : 100,
 				 effect : "fadeIn"
 				});
+
+				$(".scrollarea").scroll(function () {
+					// alert("1");
+				})
 			})
 		</script>
 </body>
