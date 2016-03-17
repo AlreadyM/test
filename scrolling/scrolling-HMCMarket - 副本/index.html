@@ -1,0 +1,974 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>商品管理</title>
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	<script src="js/jquery.1.5.1.js"></script>
+	<!-- <script src="js/jquery.scrollTo-1.4.2-min.js"></script> -->
+	<!-- <script src="js/jquery.easing.js"></script> -->
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+
+	<script src="js/active-nav.js"></script>
+	<!-- <script src="js/script.js"></script> -->
+	<script src="js/lazy_load.js"></script>
+
+	<style>
+		*{box-sizing:border-box;}
+				html{background-color:#EEEEEE;color:#383838;}
+				::-moz-selection{background:#333636;color:#00DFFC;}
+				::selection{background:#333636;color:#00DFFC;}
+				#documenter_sidebar #documenter_logo{background-image:url();}
+				a{color:#008C9E;}
+				hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+				#documenter_sidebar, #documenter_sidebar ol a{background-color:#343838;color:#FFFFFF;}
+				#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+				#documenter_sidebar ol{border-top:1px solid #212424;}
+				#documenter_sidebar ol a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+				#documenter_sidebar ol a:hover{color:#000;background-color: #F1F1F1;border-top:none;}
+				#documenter_sidebar ol a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+				#documenter_copyright{display:block !important;visibility:visible !important;}
+				.showtitle{position: fixed;top: 0;right: 0;width: 75%;height: 27px;background-color:#A1A1A1;z-index:101;text-align: center;font-size: 16px;line-height: 27px;}
+				html,body,.sidebar,.content{height: 100%;width: 100%;}
+				#documenter_sidebar{width: 100%;}
+				#documenter_content{left:0;padding-left: 10px;width: 100%;background-color: #fff;padding-bottom: 10%;}
+				#documenter_sidebar{height: 100%;width: 25%;padding-bottom:48px;overflow: auto;	-webkit-overflow-scrolling:touch;
+position: absolute;}
+				.sidebar{float: left;width: 25%;}
+				.content{overflow-y: scroll;padding-left: 10px;}
+				#documenter_sidebar ol{height: auto;border-top:none;}
+					#documenter_sidebar ol a,#documenter_sidebar ol li ol li a{text-align: center;padding: 8px 0;}
+					#documenter_nav{margin: 0;}
+					#documenter_sidebar, #documenter_sidebar ol a{background-color: #F1F1F1;}
+					#guid{padding: 0 !important;}
+					/*#documenter_content h3{margin: 0;height: 0;}*/
+
+					#documenter_sidebar ol a{color: #000;text-shadow:none;}
+
+					#documenter_sidebar ol a{border:1px solid #CCCCCC;border-top:none;border-left:none; font-size: 16px;font-weight: normal;height: 40px;overflow: hidden;line-height: 23px;}
+					#documenter_sidebar ol li ol li a{border:none;background-color: #fff;}
+
+					#documenter_sidebar ol a.current{background-color: #AAAAAA;color: #676767;font-size: 18px;border:1px solid #AAAAAA;border-left:none;}
+					#documenter_sidebar ol li ol li {border:1px solid #f36303;border-top:none; border-left:none; font-size: 16px;background-color: red !important;}
+					#documenter_sidebar ol li ol li a.current{background-color: #f36303;color: #fff;border:none;border-bottom:1px solid #f36303;}
+					#documenter_sidebar ol a.current{}
+					#documenter_content h4{font-size: 18px;font-weight: normal;margin: 0;margin-bottom: 0px;line-height: 27px;padding-left: 10px;}
+
+					ol.animate{position: relative;animation:lefttoright 2s 1 ease;}
+					@-webkit-keyframes lefttoright {
+						0% {left: 100%;height: 0;opacity: 0;}
+						40% {left: 0;height: 100%;}
+						65% {left: 4%;}
+						75% {left: 0%;}
+						85% {left: 2%;}
+						90% {left: 0;}
+						95% {left: 1%;}
+						100% {left: 0%; opacity: 1; }
+					}
+					.down{animation:down 2s 1 ease;}
+					.up{animation:up 2s 1 ease;}
+					@-webkit-keyframes down{
+						0%{top: 0;}
+						100%{top: 100%;}
+					}
+					@-webkit-keyframes up{
+						0%{top: 100%;}
+						100%{top: 0;}
+					}
+				
+					.goods{position: relative;border-bottom: 1px solid #C9C9C9;padding-right: 10px;padding-top:10px;}
+					.goodslogo{float: left;}
+					.goodslogo img{width: 70px;height: 70px;}
+
+					.clamp1{
+						overflow: hidden;
+					    text-overflow: ellipsis;
+					    display: -webkit-box;
+					    -webkit-line-clamp: 1;
+					    -webkit-box-orient: vertical;
+					    font-weight: normal;
+					}
+					.name-attribute{height: 80px;padding-left: 75px;}
+					.goodsname{font-weight: bold;font-size: 16px;line-height: 22px;}
+					.goodsattribute{font-size: 12px;line-height: 20px;color:#FF6969;}
+					.price-obj{height: 20px;position: absolute;right: 0;bottom: 9px;width: 100%;}
+					.goodsprice{float: left;left: 75px;position: relative;color: #D86C00;font-size: 18px;}
+					.goodsobj{float: right;}
+					.section h4,.section h3{border-left: 3px solid #CCCCCC;background-color: #F1F1F1;margin-right: -10px;margin: 0 !important;padding: 0;height: 27px;font-size: 16px !important;}
+					.double h3{display: none;}
+					.section h3{line-height: 27px;padding-left: 10px;}
+					.goodscontent .goods:last-child{border:none;}
+					.我{font-size: 20px;font-weight: bold;color: red;}
+					.add-cart img{height: 30px;width: 30px;position: relative;top: 5px;}
+					.add-cart{position: relative;bottom: 15px;right: 10px;}
+					.none .addcart,.nonegoods{display: none;}
+					.none .nonegoods{display: block;}
+					.reduce-add{position: relative;right: 10px;color: #000;display: none;}
+					.reduce-add span{height: 20px;width: 20px;color: #f36303;font-size: 16px;line-height: 16px;display: inline-block;text-align: center;}
+					.reduce-add a{height: 20px;width: 20px;display: inline-block;border-radius: 50%;text-align: center; font-size: 18px;line-height: 20px;text-decoration: none;}
+					.addmore{color: #fff;background-color: #f36303;}
+					.reduceless{color: #f36303;background-color: #fff;border:1px solid #f36303;}
+
+					
+					.scrollarea{position: absolute;right: 0;top: 0;height: 100%;width: 75%;overflow: scroll;-webkit-overflow-scrolling:touch;}
+</style>
+
+</head>
+<body style="background-color: red;overflow:hidden;">
+	<!-- <div class="showtitle"><span></span></div> -->
+	<div class="cart">
+		<div class="cartNum">
+			<img src="img/cart.png" alt="购物车">
+			<span>2</span>
+			<p>¥&nbsp;0.00</p>
+		</div>
+		<a href="javascript:;">去结算</a>
+	</div>
+	<!-- <div class="container"> -->
+		<div id="documenter_sidebar">
+			<ol id="documenter_nav">
+				<li><a class="current levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a class=" levelo" href="#one">壹贰叁肆</a>
+					<ol>
+						<li><a href="#one_one" class="levelt">壹-壹</a>
+						<li><a href="#one_two" class="levelt">壹-贰</a>
+						<li><a href="#one_three" class="levelt">壹-叁</a>
+					</ol>
+				</li>
+				<li><a href="#two" class="levelo">贰</a>
+					<ol>
+						<li><a href="#two_one" class="levelt">贰-壹</a>
+						<li><a href="#two_two" class="levelt">贰-贰</a>
+						<li><a href="#two_three" class="levelt">贰-叁</a>
+						<li><a href="#two_four" class="levelt">贰-肆</a>
+					</ol>
+				</li>
+				<li><a href="#three" class="levelo">叁</a></li>
+				<li><a href="#four" class="levelo">肆</a></li>
+			</ol>
+		</div>
+		
+		<div class="scrollarea">
+			<div id="documenter_content">
+				<div class="section double" id="one">
+					<h3>壹贰叁肆</h3>
+
+					<h4 id="one_one">壹-壹</h4>
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example1.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example2.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 id="one_two">壹-贰</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example3.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example4.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 id="one_three">壹-叁</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example5.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example6.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div >
+
+				<div class="section double" id="two">
+					<h3>贰</h3>
+
+					<h4 id="two_one">贰-壹</h4>
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example7.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example8.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 id="two_two">贰-贰</h4>
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example9.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example10.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 id="two_three">贰-叁</h4>
+					
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example11.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example12.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<h4 id="two_four">贰-肆</h4>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example1.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example2.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section" id="three">
+					<h3 id="three_one">叁</h3>
+
+					<div class="goodscontent">
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example1.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart none">
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">--</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="goods">
+							<div class="goodslogo">
+								<img class="lazy" data-original="img/example2.jpg"  alt="商品图片" />
+							</div>
+							<div class="name-attribute">
+								<div class="goodsname clamp1">
+									商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名商品名
+								</div>
+								<div class="goodsattribute clamp1">
+									商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性商品属性
+								</div>
+								<div class="price-obj">
+									<div class="goodsprice">
+										¥<span>5230.00</span>
+									</div>
+									<div class="goodsobj" >
+										<div class="add-cart " >
+											<img class="addcart" src="img/addcart.png" alt="添到购物车" />
+											<img class="nonegoods" src="img/nonegoods.png" alt="添到购物车" />
+										</div>
+										<div class="reduce-add">
+											<a class="reduceless" href="javascript:;">－</a>
+											<span>1</span>
+											<a class="addmore" href="javascript:;">＋</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section" id="four">
+					<h3 id="four_one">肆</h3>
+					<p>
+						测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+					</p>
+					<br /><br /><br /><br /><br />
+				</div>
+		</div>
+		</div>
+		
+	<!-- </div> -->
+
+
+		<script>
+			$(function  () {
+				//开始添加到购物车
+				$("body").delegate( ".addcart","click", function  () {
+					$(this).closest('.add-cart').hide();
+					$(this).closest(".add-cart").next(".reduce-add").show();
+
+				});
+				//添加商品数量
+				$(".reduce-add").delegate('.addmore','click',function  () {
+					var obj = $(this).siblings("span");
+						num = parseInt(obj.text())+1;
+						obj.text(num);
+				})
+				$(".reduce-add").delegate('.reduceless','click',function  () {
+					var obj = $(this).siblings("span");
+						num = parseInt(obj.text())-1;
+						if (num>0) {
+							obj.text(num);
+						}else{
+							$(this).closest(".reduce-add").hide();
+							$(this).closest(".reduce-add").siblings(".add-cart").show();
+						};
+				})
+				$('img.lazy').lazyload({
+				 threshold : 100,
+				 effect : "fadeIn"
+				});
+
+				$(".scrollarea").scroll(function () {
+					// alert("1");
+				})
+			})
+		</script>
+</body>
+</html>
