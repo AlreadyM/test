@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/statichtml/moviehelper/app/Public/base.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../css/" /> -->
+	<title>链接tsml test server</title>
+</head>
+<body>
+	<header></header>
+	<div class="container">
+		<div class="section">
+			<a href="javascript:;">点击发起请求</a>
+		</div>
+		<div class="section">
+
+		</div>
+	</div>
+	<footer></footer>
+	<script src="/statichtml/moviehelper/app/Public/jQuery/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function () {
+			$('a').click(function () {
+				$.ajax({
+					url:'http://123.57.142.113/statichtml/bjmovie01/site/myworkDevV2_1/public/api.php',
+					success:function (data) {
+						console.log(data);
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>
