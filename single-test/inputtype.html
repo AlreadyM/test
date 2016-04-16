@@ -10,7 +10,9 @@
 <body>
 	<header></header>
 	<div class="container">
-		<div>text:<input type="text" /></div>
+		<div>text:<input type="text" id="in" onchange='compare()'/>
+		compare with <input type="text" id="compared" onchange='compare()'>
+		</div>
 		<div>text&pattern:<input type="text" pattern="[0-9]*" /></div>
 		<div>number:<input type="number" /></div>
 		<div>password:<input type="password" /></div>
@@ -30,5 +32,15 @@
 
 	</div>
 	<footer></footer>
+	<script>
+		function compare() {
+			var obj1 = document.getElementById('in'),
+			 	obj2 = document.getElementById('compared'),
+			 	value1 = parseInt(obj1.value),
+			 	value2 = parseInt(obj2.value);
+			console.log(value1,value2);
+			value1>value2?alert('大于'):alert('小于');
+		}
+	</script>
 </body>
 </html>
