@@ -25,7 +25,7 @@
 	<script>
 		$(function () {
 			$.ajax({
-				url: 'getNewFeedListV2-500Res.json',
+				url: 'userFeed.json',
 				type: 'get',
 				dataType: 'json',
 				data: {param1: 'value1'},
@@ -51,44 +51,46 @@
 					search_isSeen: null,
 					search_isSeen_userid: 5534
 				}
-				for(var i=0 in newResult.items){
-					// collections To wfcollects
-					var item = newResult.items[i]
-						item.wfcollects =item.collections
-						delete item.collections
-					//sender object
-						item.sender={
-							id_user: item.senderid,
-							username: item.sender_name,
-							surname: 'item',
-							firstname: 'item',
-							publishedname: 'item',
-							gender: 'item',
-							selfdesc: 'item',
-							statusmessage: 'item',
-							picwfemltableid: item.sender_pic,
-							bkgdwfemltableid: 'item',
-							personalemail: 'item',
-							viewserName: item.sender_name
+					for(var i=0 in newResult.items){
+						var item = newResult.items[i]
+						conver(item)
+						if (item.Ref_feed.length !=0) {
+							console.log(item.Ref_feed)
+							conver(item.Ref_feed)
 						}
+					}
+					function conver(item){
+						//sender object
+							item.sender={
+								id_user: item.senderid,
+								username: item.sender_name,
+								surname: 'item',
+								firstname: 'item',
+								publishedname: 'item',
+								gender: 'item',
+								selfdesc: 'item',
+								statusmessage: 'item',
+								picwfemltableid: item.sender_pic,
+								bkgdwfemltableid: 'item',
+								personalemail: 'item',
+								viewserName: item.sender_name
+							}
+						// collections To wfcollects
+							item.wfcollects =item.collections
+							delete item.collections
+						if (item.wfcollects.length!=0) {
+							console.log("存在")
 
-						for(var i=0 in item.wfcollects){
-							var wfcollects = item.wfcollects[i]
-							wfcollects.wfcollectelems = wfcollects.elems
-							delete wfcollects.elems
-							// for(var i3=0 in wfcollects.elems){
-							// 	wfcollects.wfcollectelems = wfcollects.elems[i3]
-
-							// }
-						}
-						// item.Ref_feed.wfcollects.= item.Ref_feed.collections
-						item.Ref_feed.wfcollects = item.Ref_feed.collections
-						for(var i in item.Ref_feed.wfcollects){
-							var wfcollects = item.wfcollects[i]
-							wfcollects.wfcollectelems = wfcollects.elems
-							delete wfcollects.elems
-						}
-				}
+							for(var i=0 in item.wfcollects){
+								var wfcollects = item.wfcollects[i]
+								wfcollects.wfcollectelems = wfcollects.elems
+								delete wfcollects.elems
+							}
+						}else{
+								console.log('--------')
+							}
+					}
+				
 				// $.each(newResult.items,function (i,item) {
 					// // collections To wfcollects
 					// 	item.wfcollects =item.collections
