@@ -71,14 +71,22 @@
 							personalemail: 'item',
 							viewserName: item.sender_name
 						}
-						for(var i2=0 in item.wfcollects){
-							var wfcollects = item.wfcollects[i2]
+
+						for(var i=0 in item.wfcollects){
+							var wfcollects = item.wfcollects[i]
 							wfcollects.wfcollectelems = wfcollects.elems
 							delete wfcollects.elems
 							// for(var i3=0 in wfcollects.elems){
 							// 	wfcollects.wfcollectelems = wfcollects.elems[i3]
 
 							// }
+						}
+						// item.Ref_feed.wfcollects.= item.Ref_feed.collections
+						item.Ref_feed.wfcollects = item.Ref_feed.collections
+						for(var i in item.Ref_feed.wfcollects){
+							var wfcollects = item.wfcollects[i]
+							wfcollects.wfcollectelems = wfcollects.elems
+							delete wfcollects.elems
 						}
 				}
 				// $.each(newResult.items,function (i,item) {
