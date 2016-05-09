@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASA,kDAAkD,CAAC,MAAM,CAPnD,CAAC,CAO0D,OAAO,CAPlE,CAAC,CCAP,MAAM,CAAC,KAAK,CDKN,GAAG",
+"sources": ["reset.scss","test.scss"],
+"names": [],
+"file": "test.css"
+}

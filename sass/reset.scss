@@ -1,0 +1,11 @@
+@charset 'utf-8';
+// size px
+$zero:0;
+$ten-px:10;
+// size percent
+$ten-per:10%;
+$threethree-per:33.3333%;
+$half:50%;
+$whole:100%;
+$blue: #f36303;
+div,p,ul,ol,dl,nav,header,footer,h1,h2,h3,h4,h5,h6 {margin:$zero; padding:$zero;}
